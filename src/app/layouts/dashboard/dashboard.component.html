@@ -1,0 +1,33 @@
+<!-- Sidenav -->
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <!-- <p>Auto-resizing sidenav</p>
+        @if (showFiller) {
+        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+        }
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+        </button> -->
+        <p>Menu</p>
+        <button mat-raised-button class="block" routerLink="students">Alumnos</button>
+        <button mat-raised-button class="block" routerLink="courses">Cursos</button>
+        <button mat-raised-button class="block" routerLink="teachers">Profesores</button>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <!-- Toolbar -->
+        <mat-toolbar>
+            <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1 appTitles>ABM Alumnos</h1>
+        </mat-toolbar>
+        <!-- Toolbar -->
+        <router-outlet/>
+        <!-- <app-students-list /> -->
+    </div>
+    <div>
+    </div>
+</mat-drawer-container>
+<!-- Sidenav -->

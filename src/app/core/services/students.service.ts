@@ -1,0 +1,34 @@
+import { Injectable } from '@angular/core';
+import { IStudent } from '../models/student';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StudentsService {
+
+  students: IStudent[] = [
+    { firstname: 'Kevin', lastname: 'Stajurski', id: 1, email: 'kevinstajurski@email.com', coursed: ['HTML-CSS', 'Javascript', 'React', 'React Native', 'NextJS'], studying: ['Angular'], role: 'user' },
+    { firstname: 'Carlos', lastname: 'Perez', id: 2, email: 'carlosperez@email.com', coursed: ['HTML-CSS'], studying: ['Javascript'], role: 'user' },
+    { firstname: 'Pedro', lastname: 'Gonzalez', id: 3, email: 'pedrogonzalez@email.com', coursed: [], studying: ['HTML-CSS'], role: 'user' },
+    { firstname: 'Roberto', lastname: 'Garcia', id: 4, email: 'robertogarcia@email.com', coursed: ['HTML-CSS', 'Javascript'], studying: ['React'], role: 'user' }
+  ]
+
+  addStudent(student: IStudent) {
+    this.students = [...this.students, student]
+  }
+
+  deleteStudent(id: number) {
+    this.students = this.students.filter((student) => student.id != id)
+    return this.students
+  }
+
+  editStudent() { }
+
+  obs = new Observable<IStudent[]>((observer) => {
+    observer.next(this.students)
+    observer.complete()
+  })
+
+  constructor() { }
+}
