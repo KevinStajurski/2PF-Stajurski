@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,10 +9,21 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent {
 
-  constructor(private router: Router) { }
+  loginForm: FormGroup
+
+  constructor(private router: Router, private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: ['',Validators.required,Validators.email],
+      password: ['',Validators.required]
+    })
+  }
 
   handleLogin() {
-    this.router.navigate(['dashboard'])
+    if (this.loginForm.invalid){
+      this.loginForm.markAllAsTouched()
+    } else {
+      this.router.navigate(['dashboard'])
+    }
   }
 
 }

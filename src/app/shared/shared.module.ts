@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { FormFieldValidationErrorsPipe } from './pipes/form-field-validation-errors.pipe';
 import { TitlesDirective } from './directives/titles.directive';
+import {MatCardModule} from '@angular/material/card'
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { TitlesDirective } from './directives/titles.directive';
     MatIconModule,
     FullNamePipe,
     FormFieldValidationErrorsPipe,
-    TitlesDirective
+    TitlesDirective,
+    MatCardModule
   ]
 })
 export class SharedModule { }
