@@ -12,6 +12,7 @@
         <button mat-raised-button class="block" routerLink="students">Alumnos</button>
         <button mat-raised-button class="block" routerLink="courses">Cursos</button>
         <button mat-raised-button class="block" routerLink="teachers">Profesores</button>
+        <button mat-raised-button class="block" (click)="handleLogout()" color="warn">Cerrar sesion</button>
     </mat-drawer>
 
     <div class="example-sidenav-content">
@@ -21,11 +22,10 @@
                 aria-label="Example icon-button with menu icon">
                 <mat-icon>menu</mat-icon>
             </button>
-            <h1 appTitles>ABM Alumnos</h1>
+            <h1 appTitles>ABM Alumnos y Cursos</h1>
         </mat-toolbar>
         <!-- Toolbar -->
-        <router-outlet/>
-        <!-- <app-students-list /> -->
+        <router-outlet />
     </div>
     <div>
     </div>

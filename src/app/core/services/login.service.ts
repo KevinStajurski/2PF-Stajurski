@@ -43,6 +43,7 @@ export class LoginService {
   logout(): void {
     this._loginUser$.next(null)
     localStorage.removeItem('accessToken')
+    this.router.navigate(['auth'])
   }
 
   constructor(private router:Router) { }
