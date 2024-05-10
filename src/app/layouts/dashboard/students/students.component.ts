@@ -38,7 +38,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.obsSuscription = this.studentsService.obs.subscribe({
+    this.obsSuscription = this.studentsService.getStudents().subscribe({
       next: (value) => { this.dataSource = value }
     })
   }
@@ -48,6 +48,6 @@ export class StudentsComponent implements OnInit, OnDestroy {
   }
 
   onDeleteStudent(id: number): void {
-    this.dataSource = this.studentsService.deleteStudent(id)
+    //this.dataSource = this.studentsService.deleteStudent(id)
   }
 }

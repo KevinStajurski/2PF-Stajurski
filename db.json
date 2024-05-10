@@ -1,0 +1,23 @@
+{
+  "students": [
+    {
+      "id": "238e",
+      "firstname": "Kevin",
+      "lastname": "Stajurski",
+      "email": "kevinstajurski@email.com",
+      "coursed": [
+        "HTML-CSS",
+        "Javascript",
+        "React",
+        "React Native",
+        "NextJS"
+      ],
+      "studying": [
+        "Angular"
+      ],
+      "role": "user"
+    }
+  ],
+  "teachers": [],
+  "courses": []
+}
