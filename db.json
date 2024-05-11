@@ -1,7 +1,6 @@
 {
   "students": [
     {
-      "id": "238e",
       "firstname": "Kevin",
       "lastname": "Stajurski",
       "email": "kevinstajurski@email.com",
@@ -15,7 +14,17 @@
       "studying": [
         "Angular"
       ],
-      "role": "user"
+      "id": "894e"
+    },
+    {
+      "id": "ee83",
+      "firstname": "Pablo",
+      "lastname": "Gonzalez",
+      "email": "pablogonzalez@email.com",
+      "coursed": "",
+      "studying": [
+        "HTML-CSS"
+      ]
     }
   ],
   "teachers": [],
