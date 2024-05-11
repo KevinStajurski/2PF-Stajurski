@@ -25,6 +25,22 @@
       "studying": [
         "HTML-CSS"
       ]
+    },
+    {
+      "id": "ce08",
+      "firstname": "Pablo",
+      "lastname": "Hernandez",
+      "email": "pablohernandez@email.com",
+      "coursed": [
+        "HTML-CSS",
+        "Javascript",
+        "React",
+        "React Native",
+        "NextJS"
+      ],
+      "studying": [
+        "Angular"
+      ]
     }
   ],
   "teachers": [],

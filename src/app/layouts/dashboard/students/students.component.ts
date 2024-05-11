@@ -35,11 +35,11 @@ export class StudentsComponent implements OnInit, OnDestroy {
           if (result) {
             if (editingStudent) {
               this.putSuscription = this.studentsService.editStudent(editingStudent.id, result).subscribe({
-                next: (value) => console.log(value)
+                next: (value) => console.log(value, "editado")
               })
             } else {
               this.postSuscription = this.studentsService.addStudent(result).subscribe({
-                next: (value) => console.log(value)
+                next: (value) => console.log(value, "agregado")
               })
             }
           }
@@ -56,6 +56,8 @@ export class StudentsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.getSuscription?.unsubscribe()
     this.deleteSuscription?.unsubscribe()
+    this.postSuscription?.unsubscribe()
+    this.putSuscription?.unsubscribe()
   }
 
 }
