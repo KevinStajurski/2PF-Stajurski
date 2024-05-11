@@ -10,13 +10,6 @@ export class StudentsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // students: IStudent[] = [
-  //   { firstname: 'Kevin', lastname: 'Stajurski', email: 'kevinstajurski@email.com', coursed: ['HTML-CSS', 'Javascript', 'React', 'React Native', 'NextJS'], studying: ['Angular'], role: 'user' },
-  //   { firstname: 'Carlos', lastname: 'Perez', id: 2, email: 'carlosperez@email.com', coursed: ['HTML-CSS'], studying: ['Javascript'], role: 'user' },
-  //   { firstname: 'Pedro', lastname: 'Gonzalez', id: 3, email: 'pedrogonzalez@email.com', coursed: [], studying: ['HTML-CSS'], role: 'user' },
-  //   { firstname: 'Roberto', lastname: 'Garcia', id: 4, email: 'robertogarcia@email.com', coursed: ['HTML-CSS', 'Javascript'], studying: ['React'], role: 'user' }
-  // ]
-
   addStudent(student: IStudent) {
     return this.httpClient.post('http://localhost:3000/students', student)
   }

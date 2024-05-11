@@ -38,9 +38,6 @@ export class StudentsComponent implements OnInit, OnDestroy {
                 next: (value) => console.log(value)
               })
             } else {
-              //result.id = new Date().getTime().toString().substring(0, 3)  => esto no deberia hacer falta ya que el id lo genera JSON Server
-              //this.dataSource = [...this.dataSource, result]
-              //aca deberia hacer el POST
               this.postSuscription = this.studentsService.addStudent(result).subscribe({
                 next: (value) => console.log(value)
               })
