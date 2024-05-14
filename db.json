@@ -17,17 +17,18 @@
       "id": "894e"
     },
     {
-      "id": "ee83",
       "firstname": "Pablo",
       "lastname": "Gonzalez",
       "email": "pablogonzalez@email.com",
-      "coursed": "",
-      "studying": [
+      "coursed": [
         "HTML-CSS"
-      ]
+      ],
+      "studying": [
+        "Javascript"
+      ],
+      "id": "ee83"
     },
     {
-      "id": "ce08",
       "firstname": "Pablo",
       "lastname": "Hernandez",
       "email": "pablohernandez@email.com",
@@ -35,12 +36,12 @@
         "HTML-CSS",
         "Javascript",
         "React",
-        "React Native",
-        "NextJS"
+        "React Native"
       ],
       "studying": [
-        "Angular"
-      ]
+        "NextJS"
+      ],
+      "id": "ce08"
     }
   ],
   "teachers": [],
