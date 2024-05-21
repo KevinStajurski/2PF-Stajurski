@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../../core/services/courses.service';
-import { ICourses } from '../../../core/models/courses';
 import { Subscription } from 'rxjs';
+import { ICourses } from '../../../core/models';
 
 @Component({
   selector: 'app-courses',

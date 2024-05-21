@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { ILogin } from '../models/login';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IStudent } from '../models/student';
 import { Router } from '@angular/router';
+import { ILogin, IUser } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private MOCK_AUTH_USER:IStudent = {
+  private MOCK_AUTH_USER:IUser = {
     firstname: "Kevin",
     lastname: "Stajurski",
     id: 1,
@@ -17,7 +16,7 @@ export class LoginService {
     studying: [],
     role: "user"
   }
-  private _loginUser$ = new BehaviorSubject<IStudent | null>(null)
+  private _loginUser$ = new BehaviorSubject<IUser | null>(null)
   public loginUser$ = this._loginUser$.asObservable()
 
   login(data: ILogin): void {

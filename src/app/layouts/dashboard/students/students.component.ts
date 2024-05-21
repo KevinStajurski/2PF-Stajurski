@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddStudentDialogComponent } from './add-student-dialog/add-student-dialog.component'
-import { IStudent } from '../../../core/models/student';
 import { StudentsService } from '../../../core/services/students.service';
 import { Subscription } from 'rxjs';
+import { IUser } from '../../../core/models';
 
 @Component({
   selector: 'app-students',
@@ -16,7 +16,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
   constructor(private matDialog: MatDialog, private studentsService: StudentsService) { }
 
   displayedColumns: string[] = ['firstname', 'id', 'email', 'coursed', 'studying', 'actions'];
-  dataSource: IStudent[] = [];
+  dataSource: IUser[] = [];
   getSuscription?: Subscription
   deleteSuscription?: Subscription
   putSuscription?: Subscription
@@ -28,7 +28,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
     })
   }
 
-  openDialog(editingStudent?: IStudent): void {
+  openDialog(editingStudent?: IUser): void {
     this.matDialog.open(AddStudentDialogComponent, { data: editingStudent })
       .afterClosed().subscribe({
         next: (result) => {

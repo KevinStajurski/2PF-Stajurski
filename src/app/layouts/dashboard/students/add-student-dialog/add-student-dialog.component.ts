@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { IStudent } from '../../../../core/models/student';
+import { IUser } from '../../../../core/models';
 
 @Component({
   selector: 'app-add-student-dialog',
@@ -13,7 +13,7 @@ export class AddStudentDialogComponent {
   
   studentForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private matDialogRef: MatDialogRef<AddStudentDialogComponent>, @Inject(MAT_DIALOG_DATA) private editingStudent?: IStudent) {
+  constructor(private formBuilder: FormBuilder, private matDialogRef: MatDialogRef<AddStudentDialogComponent>, @Inject(MAT_DIALOG_DATA) private editingStudent?: IUser) {
     this.studentForm = this.formBuilder.group({
       firstname: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+$')]],
       lastname: ['', [Validators.required, Validators.pattern('^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+$')]],

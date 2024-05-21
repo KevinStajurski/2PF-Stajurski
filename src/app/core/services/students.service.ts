@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IStudent } from '../models/student';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { IUser } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class StudentsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  addStudent(student: IStudent) {
+  addStudent(student: IUser) {
     return this.httpClient.post('http://localhost:3000/students', student)
   }
 
@@ -22,8 +22,8 @@ export class StudentsService {
     return this.httpClient.put(`http://localhost:3000/students/${id}`, data)
   }
 
-  getStudents(): Observable<IStudent[]> {
-    return this.httpClient.get<IStudent[]>('http://localhost:3000/students')
+  getStudents(): Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>('http://localhost:3000/students')
   }
 
 }
