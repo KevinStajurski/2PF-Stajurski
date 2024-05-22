@@ -20,13 +20,13 @@ export class LoginService {
   public loginUser$ = this._loginUser$.asObservable()
 
   login(data: ILogin): void {
-    if (data.email !== 'user@email.com' || data.password !== '123456') {
-      alert("Correo o clave incorrecto.")
-    } else {
-      this._loginUser$.next(this.MOCK_AUTH_USER)
-      localStorage.setItem('accessToken', 'jshadgjahg')
-      this.router.navigate(['dashboard'])
-    }
+    // if (data.email !== 'user@email.com' || data.password !== '123456') {
+    //   alert("Correo o clave incorrecto.")
+    // } else {
+    //   this._loginUser$.next(this.MOCK_AUTH_USER)
+    //   localStorage.setItem('accessToken', 'jshadgjahg')
+    //   this.router.navigate(['dashboard'])
+    // }
   }
 
   verifyToken(): boolean {

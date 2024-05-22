@@ -10,8 +10,34 @@ const initialState: AuthState = {
     authUser: null
 }
 
-export const authReducer = createReducer(initialState,
-    on(authActions.login, () => {
+const MOCK_AUTH_USER: IUser = {
+    firstname: "User",
+    lastname: "S",
+    id: 1,
+    email: "user@email.com",
+    coursed: [],
+    studying: [],
+    role: "user"
+}
 
+export const authFeatureName = 'auth'
+
+export const authReducer = createReducer(initialState,
+    on(authActions.login, (state, action) => {
+        if (action.payload.email !== 'user@email.com' || action.payload.password !== '123456') {
+            alert("Correo o clave incorrecto.")
+            return state
+        } else {
+            // this._loginUser$.next(this.MOCK_AUTH_USER)
+            localStorage.setItem('accessToken', 'jshadgjahg')
+            // this.router.navigate(['dashboard'])
+            return {
+                authUser: MOCK_AUTH_USER
+            }
+        }
+    }),
+    on(authActions.logout, () => {
+        localStorage.removeItem('accessToken')
+        return initialState
     })
 )
