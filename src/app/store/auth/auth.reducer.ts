@@ -12,7 +12,7 @@ const initialState: AuthState = {
 
 const MOCK_AUTH_USER: IUser = {
     firstname: "User",
-    lastname: "S",
+    lastname: "Lastname",
     id: 1,
     email: "user@email.com",
     coursed: [],

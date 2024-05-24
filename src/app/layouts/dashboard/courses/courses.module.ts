@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses.component';
+import { EffectsModule } from '@ngrx/effects';
+import { CourseEffects } from './store/course.effects';
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { CoursesComponent } from './courses.component';
   ],
   imports: [
     CommonModule,
-    CoursesRoutingModule
+    CoursesRoutingModule,
+    EffectsModule.forFeature([CourseEffects])
   ]
 })
 export class CoursesModule { }
