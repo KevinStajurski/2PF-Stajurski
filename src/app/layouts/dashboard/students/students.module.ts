@@ -7,6 +7,8 @@ import { AddStudentDialogComponent } from './add-student-dialog/add-student-dial
 import { SharedModule } from '../../../shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { StudentEffects } from './store/student.effects';
+import { StoreModule } from '@ngrx/store';
+import { studentFeature } from './store/student.reducer';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { StudentEffects } from './store/student.effects';
     CommonModule,
     StudentsRoutingModule,
     SharedModule,
+    StoreModule.forFeature(studentFeature),
     EffectsModule.forFeature([StudentEffects])
   ]
 })

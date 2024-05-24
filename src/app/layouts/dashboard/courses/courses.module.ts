@@ -5,6 +5,8 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses.component';
 import { EffectsModule } from '@ngrx/effects';
 import { CourseEffects } from './store/course.effects';
+import { StoreModule } from '@ngrx/store';
+import { courseFeature } from './store/course.reducer';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { CourseEffects } from './store/course.effects';
   imports: [
     CommonModule,
     CoursesRoutingModule,
+    StoreModule.forFeature(courseFeature),
     EffectsModule.forFeature([CourseEffects])
   ]
 })
