@@ -22,7 +22,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
     private store: Store
   ) {
     this.loadingStudents$ = this.store.select(selectLoadingStudents)
-    this.error$=this.store.select(selectError)
+    this.error$ = this.store.select(selectError)
   }
 
   displayedColumns: string[] = ['firstname', 'id', 'email', 'coursed', 'studying', 'actions'];
@@ -30,9 +30,9 @@ export class StudentsComponent implements OnInit, OnDestroy {
   loadingStudents$: Observable<boolean>
   error$: Observable<unknown>
   // getSuscription?: Subscription
-  // deleteSuscription?: Subscription
-  // putSuscription?: Subscription
-  // postSuscription?: Subscription
+  deleteSuscription?: Subscription
+  putSuscription?: Subscription
+  postSuscription?: Subscription
 
   ngOnInit(): void {
     this.store.dispatch(StudentActions.loadStudents())
@@ -45,35 +45,35 @@ export class StudentsComponent implements OnInit, OnDestroy {
   }
 
   openDialog(editingStudent?: IUser): void {
-    // this.matDialog.open(AddStudentDialogComponent, { data: editingStudent })
-    //   .afterClosed().subscribe({
-    //     next: (result) => {
-    //       if (result) {
-    //         if (editingStudent) {
-    //           this.putSuscription = this.studentsService.editStudent(editingStudent.id, result).subscribe({
-    //             next: (value) => console.log(value, "editado")
-    //           })
-    //         } else {
-    //           this.postSuscription = this.studentsService.addStudent(result).subscribe({
-    //             next: (value) => console.log(value, "agregado")
-    //           })
-    //         }
-    //       }
-    //     }
-    //   })
+    this.matDialog.open(AddStudentDialogComponent, { data: editingStudent })
+      .afterClosed().subscribe({
+        next: (result) => {
+          if (result) {
+            if (editingStudent) {
+              this.putSuscription = this.studentsService.editStudent(editingStudent.id, result).subscribe({
+                next: (value) => console.log(value, "editado")
+              })
+            } else {
+              this.postSuscription = this.studentsService.addStudent(result).subscribe({
+                next: (value) => console.log(value, "agregado")
+              })
+            }
+          }
+        }
+      })
   }
 
   onDeleteStudent(id: number): void {
-    // this.deleteSuscription = this.studentsService.deleteStudent(id).subscribe({
-    //   next: (value) => console.log(value, "eliminado"),
-    // })
+    this.deleteSuscription = this.studentsService.deleteStudent(id).subscribe({
+      next: (value) => console.log(value, "eliminado"),
+    })
   }
 
   ngOnDestroy(): void {
     // this.getSuscription?.unsubscribe()
-    // this.deleteSuscription?.unsubscribe()
-    // this.postSuscription?.unsubscribe()
-    // this.putSuscription?.unsubscribe()
+    this.deleteSuscription?.unsubscribe()
+    this.postSuscription?.unsubscribe()
+    this.putSuscription?.unsubscribe()
   }
 
 }

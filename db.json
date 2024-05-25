@@ -45,5 +45,38 @@
     }
   ],
   "teachers": [],
-  "courses": []
+  "courses": [
+    {
+      "name": "HTML-CSS",
+      "commission": 1,
+      "durationInWeeks": 4,
+      "teacher": "Fede Castro",
+      "maxStudents": 30,
+      "students": []
+    },
+    {
+      "name": "Javascript",
+      "commission": 1,
+      "durationInWeeks": 6,
+      "teacher": "Francisco Pugh",
+      "maxStudents": 30,
+      "students": []
+    },
+    {
+      "name": "React",
+      "commission": 1,
+      "durationInWeeks": 6,
+      "teacher": "Jorge Zambrano",
+      "maxStudents": 30,
+      "students": []
+    },
+    {
+      "name": "Angular",
+      "commission": 1,
+      "durationInWeeks": 6,
+      "teacher": "Josue Baez",
+      "maxStudents": 30,
+      "students": []
+    }
+  ]
 }
