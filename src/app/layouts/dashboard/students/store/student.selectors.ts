@@ -4,3 +4,9 @@ import * as fromStudent from './student.reducer';
 export const selectStudentState = createFeatureSelector<fromStudent.State>(
   fromStudent.studentFeatureKey
 );
+
+export const selectStudentsList = createSelector(selectStudentState, (s) => s.list)
+
+export const selectLoadingStudents = createSelector(selectStudentState, (s) => s.loadingStudents)
+
+export const selectError = createSelector(selectStudentState, (s) => s.error)

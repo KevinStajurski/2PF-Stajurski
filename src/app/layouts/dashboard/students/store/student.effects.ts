@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, concatMap } from 'rxjs/operators';
 import { Observable, EMPTY, of } from 'rxjs';
 import { StudentActions } from './student.actions';
+import { StudentsService } from '../../../../core/services/students.service';
 
 
 @Injectable()
@@ -14,7 +15,7 @@ export class StudentEffects {
       ofType(StudentActions.loadStudents),
       concatMap(() =>
         /** An EMPTY observable only emits completion. Replace with your own observable API request */
-        EMPTY.pipe(
+        this.studentsService.getStudents().pipe(
           map(data => StudentActions.loadStudentsSuccess({ data })),
           catchError(error => of(StudentActions.loadStudentsFailure({ error }))))
       )
@@ -22,5 +23,8 @@ export class StudentEffects {
   });
 
 
-  constructor(private actions$: Actions) {}
+  constructor(
+    private actions$: Actions,
+    private studentsService: StudentsService
+  ) { }
 }
