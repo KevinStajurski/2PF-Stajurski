@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../../core/services/courses.service';
 import { Subscription } from 'rxjs';
-import { ICourses } from '../../../core/models';
+import { ICourse } from '../../../core/models';
 
 @Component({
   selector: 'app-courses',
@@ -12,13 +12,11 @@ export class CoursesComponent implements OnInit {
 
   constructor(private coursesService: CoursesService) { }
 
-  courses: ICourses[] = []
+  courses: ICourse[] = []
 
   obsSuscription?: Subscription
 
   ngOnInit(): void {
-    this.obsSuscription = this.coursesService.obs.subscribe({
-      next: (value) => this.courses = value
-    })
+    
   }
 }
