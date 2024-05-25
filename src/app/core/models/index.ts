@@ -3,15 +3,22 @@ export interface LoginData {
     password: string | null
 }
 
-export interface ICourses {
+export interface ICourse {
     name: string;
     commission: number;
     durationInWeeks: number;
     //startDate:Date;
     //endDate:Date;
-    teacher:string;
+    teacher: string;
     maxStudents: number;
-    students:IUser[]
+    students: IUser[]
+}
+
+export interface ITeacher {
+    firstname: string,
+    lastname: string,
+    email: string,
+    subjects: Courses[]
 }
 
 export interface ILogin {

@@ -1,17 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICourses } from '../models';
+import { HttpClient } from '@angular/common/http';
+import { ICourse } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesService {
 
-  courses: ICourses[] = []
+  constructor(private httpClient: HttpClient) { }
 
-  obs = new Observable<ICourses[]>((observer) => {
-    observer.next(this.courses)
-    observer.complete()
-  })
+  addCourse(course: ICourse) {
+    return this.httpClient.post('http://localhost:3000/courses', course)
+  }
+
+  deleteCourse(id: number) {
+    return this.httpClient.delete(`http://localhost:3000/courses/${id}`)
+  }
+
+  editCourse(id: number, data: {}) {
+    return this.httpClient.put(`http://localhost:3000/courses/${id}`, data)
+  }
+
+  getCourses(): Observable<ICourse[]> {
+    return this.httpClient.get<ICourse[]>('http://localhost:3000/courses')
+  }
 
 }
