@@ -11,13 +11,17 @@ import { Subscription } from 'rxjs';
 export class TeachersComponent {
   constructor(private teachersService: TeachersService) { }
 
-  teachers: ITeacher[] = []
+  dataSource: ITeacher[] = []
 
   obsSuscription?: Subscription
 
+  displayedColumns: string[] = ['name', 'email', 'subjects'];
+
+  openDialog(){}
+
   ngOnInit(): void {
     this.obsSuscription = this.teachersService.getTeachers().subscribe({
-      next: (teachers) => this.teachers = teachers
+      next: (teachers) => this.dataSource = teachers
     })
   }
 
