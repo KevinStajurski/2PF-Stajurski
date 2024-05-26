@@ -42,6 +42,21 @@
         "NextJS"
       ],
       "id": "ce08"
+    },
+    {
+      "id": "6208",
+      "firstname": "Raul",
+      "lastname": "Garcia",
+      "email": "raulgarcia@email.com",
+      "coursed": [
+        "HTML-CSS",
+        "Javascript",
+        "React",
+        "React Native",
+        "NextJS",
+        "Angular"
+      ],
+      "studying": ""
     }
   ],
   "teachers": [
@@ -49,59 +64,67 @@
       "firstname": "Josue",
       "lastname": "Baez",
       "email": "josuebaez@email.com",
-      "subjects": "Angular"
+      "subjects": "Angular",
+      "id": "25eb"
     },
     {
       "firstname": "Fede",
       "lastname": "Castro",
       "email": "fedecastro@email.com",
-      "subjects": "HTML-CSS"
+      "subjects": "HTML-CSS",
+      "id": "0e1b"
     },
     {
       "firstname": "Jorge",
       "lastname": "Zambrano",
       "email": "jorgezambrano@email.com",
-      "subjects": "React"
+      "subjects": "React",
+      "id": "7359"
     },
     {
       "firstname": "Francisco",
       "lastname": "Pugh",
       "email": "franciscopugh@email.com",
-      "subjects": "Javascript"
+      "subjects": "Javascript",
+      "id": "9226"
     }
   ],
   "courses": [
     {
       "name": "HTML-CSS",
       "commission": 1,
-      "durationInWeeks": 4,
+      "duration": 4,
       "teacher": "Fede Castro",
       "maxStudents": 30,
-      "students": []
+      "students": [],
+      "id": "9935"
     },
     {
       "name": "Javascript",
-      "commission": 1,
-      "durationInWeeks": 6,
+      "commission": 2,
+      "duration": 6,
       "teacher": "Francisco Pugh",
       "maxStudents": 30,
-      "students": []
+      "students": [],
+      "id": "1b62"
     },
     {
       "name": "React",
-      "commission": 1,
-      "durationInWeeks": 6,
+      "commission": 3,
+      "duration": 6,
       "teacher": "Jorge Zambrano",
       "maxStudents": 30,
-      "students": []
+      "students": [],
+      "id": "c9da"
     },
     {
       "name": "Angular",
-      "commission": 1,
-      "durationInWeeks": 6,
+      "commission": 4,
+      "duration": 6,
       "teacher": "Josue Baez",
       "maxStudents": 30,
-      "students": []
+      "students": [],
+      "id": "5aed"
     }
   ]
 }

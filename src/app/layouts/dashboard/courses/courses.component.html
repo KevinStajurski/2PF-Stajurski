@@ -1,2 +1,67 @@
-<p>courses works!</p>
-<pre>{{courses | json}}</pre>
+<!-- <p>courses works!</p> -->
+<!-- <pre>{{courses | json}}</pre> -->
+
+<div class="d-flex justify-content-end">
+    <button (click)="openDialog()" mat-button color="primary">
+        Agregar curso
+    </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Curso</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+    </ng-container>
+
+    <!-- Commission Column -->
+    <ng-container matColumnDef="commission">
+        <th mat-header-cell *matHeaderCellDef> Comision </th>
+        <td mat-cell *matCellDef="let element"> {{element.commission}} </td>
+    </ng-container>
+
+    <!-- Duration Column -->
+    <ng-container matColumnDef="duration">
+        <th mat-header-cell *matHeaderCellDef> Duración en semanas </th>
+        <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+    </ng-container>
+
+    <!-- Teacher Column -->
+    <ng-container matColumnDef="teacher">
+        <th mat-header-cell *matHeaderCellDef> Profesor </th>
+        <td mat-cell *matCellDef="let element"> {{element.teacher}} </td>
+    </ng-container>
+
+    <!-- MaxStudents Column -->
+    <ng-container matColumnDef="maxStudents">
+        <th mat-header-cell *matHeaderCellDef> Capacidad de alumnos </th>
+        <td mat-cell *matCellDef="let element"> {{element.maxStudents}} </td>
+    </ng-container>
+
+    <!-- Students Column -->
+    <ng-container matColumnDef="students">
+        <th mat-header-cell *matHeaderCellDef> Alumnos </th>
+        <td mat-cell *matCellDef="let element"> {{element.students}} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <!-- <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+            <button (click)="onDeleteStudent(element.id)" mat-icon-button>
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button (click)="openDialog(element)" mat-icon-button>
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </ng-container> -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

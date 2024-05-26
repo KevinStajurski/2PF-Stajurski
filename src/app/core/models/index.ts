@@ -6,7 +6,7 @@ export interface LoginData {
 export interface ICourse {
     name: string;
     commission: number;
-    durationInWeeks: number;
+    duration: number;
     //startDate:Date;
     //endDate:Date;
     teacher: string;

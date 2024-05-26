@@ -12,13 +12,17 @@ export class CoursesComponent implements OnInit, OnDestroy {
 
   constructor(private coursesService: CoursesService) { }
 
-  courses: ICourse[] = []
+  dataSource: ICourse[] = []
 
   obsSuscription?: Subscription
 
+  displayedColumns: string[] = ['name', 'commission', 'duration', 'teacher', 'maxStudents', 'students'];
+
+  openDialog(){}
+
   ngOnInit(): void {
     this.obsSuscription = this.coursesService.getCourses().subscribe({
-      next: (courses) => this.courses = courses
+      next: (courses) => this.dataSource = courses
     })
   }
 

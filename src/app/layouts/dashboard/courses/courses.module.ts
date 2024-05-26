@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CourseEffects } from './store/course.effects';
 import { StoreModule } from '@ngrx/store';
 import { courseFeature } from './store/course.reducer';
+import { SharedModule } from '../../../shared/shared.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { courseFeature } from './store/course.reducer';
     CoursesComponent
   ],
   imports: [
+    SharedModule,
     CommonModule,
     CoursesRoutingModule,
     StoreModule.forFeature(courseFeature),
