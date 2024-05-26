@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CoursesService } from '../../../core/services/courses.service';
 import { Subscription } from 'rxjs';
 import { ICourse } from '../../../core/models';
@@ -8,7 +8,7 @@ import { ICourse } from '../../../core/models';
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent implements OnInit, OnDestroy {
 
   constructor(private coursesService: CoursesService) { }
 
@@ -17,6 +17,12 @@ export class CoursesComponent implements OnInit {
   obsSuscription?: Subscription
 
   ngOnInit(): void {
-    
+    this.obsSuscription = this.coursesService.getCourses().subscribe({
+      next: (courses) => this.courses = courses
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.obsSuscription?.unsubscribe()
   }
 }
