@@ -1,6 +1,6 @@
 <main>
     <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="w-6">
+        <div>
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>Iniciar sesion</mat-card-title>
@@ -9,18 +9,19 @@
                     <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
                         <div>
                             <mat-form-field class="w-100">
-                                <mat-label>Email</mat-label>
+                                <mat-label>Usuario</mat-label>
                                 <input formControlName="email" matInput />
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field class="w-100">
                                 <mat-label>Clave</mat-label>
-                                <input formControlName="password" matInput type="password"/>
+                                <input formControlName="password" matInput type="password" />
                             </mat-form-field>
                         </div>
-                        <p>Usuario de prueba: user&#64;email.com</p>
-                        <p>Clave de prueba: 123456</p>
+                        <p>Test usuario: "user&#64;email.com"</p>
+                        <p>Test administrador: "admin&#64;email.com"</p>
+                        <p>Clave: 123456</p>
                         <button mat-flat-button color="primary" type="submit">Iniciar sesion</button>
                     </form>
                 </mat-card-content>

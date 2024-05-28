@@ -1,40 +1,47 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { ILogin, IUser } from '../models';
+import { IStudent, ITeacher } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private MOCK_AUTH_USER:IUser = {
-    firstname: "Kevin",
-    lastname: "Stajurski",
+
+  constructor(private router: Router) { }
+
+  private MOCK_AUTH_USER: IStudent = {
+    firstname: "User",
+    lastname: "Test",
     id: 1,
-    email: "kevin@gmail.com",
-    coursed: [],
-    studying: [],
+    email: "user@email.com",
+    finalized: [],
+    inProgress: [],
     role: "user"
   }
-  private _loginUser$ = new BehaviorSubject<IUser | null>(null)
-  public loginUser$ = this._loginUser$.asObservable()
 
-  login(data: ILogin): void {
-    // if (data.email !== 'user@email.com' || data.password !== '123456') {
-    //   alert("Correo o clave incorrecto.")
-    // } else {
-    //   this._loginUser$.next(this.MOCK_AUTH_USER)
-    //   localStorage.setItem('accessToken', 'jshadgjahg')
-    //   this.router.navigate(['dashboard'])
-    // }
+  private MOCK_AUTH_ADMIN: ITeacher = {
+    firstname: "Admin",
+    lastname: "Test",
+    email: "admin@email.com",
+    subjectsCanTeach: [],
+    role: "admin"
   }
+
+  private _loginUser$ = new BehaviorSubject<IStudent | ITeacher | null>(null)
+
+  public loginUser$ = this._loginUser$.asObservable()
 
   verifyToken(): boolean {
     const token = localStorage.getItem('accessToken')
-    if (token) {
+    if (token == 'user') {
       this._loginUser$.next(this.MOCK_AUTH_USER)
       return true
-    } else {
+    } else if (token == 'admin') {
+      this._loginUser$.next(this.MOCK_AUTH_ADMIN)
+      return true
+    }
+    else {
       return false
     }
   }
@@ -45,5 +52,4 @@ export class LoginService {
     this.router.navigate(['auth'])
   }
 
-  constructor(private router:Router) { }
 }

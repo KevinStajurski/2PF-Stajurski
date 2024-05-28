@@ -1,12 +1,12 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { StudentActions } from './student.actions';
-import { IUser } from '../../../../core/models';
+import { IStudent } from '../../../../core/models';
 
 export const studentFeatureKey = 'student';
 
 export interface State {
   loadingStudents: boolean,
-  list: IUser[],
+  list: IStudent[],
   error: unknown
 }
 

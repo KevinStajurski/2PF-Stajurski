@@ -1,3 +1,5 @@
+<h2 class="mx-3">Profesores</h2>
+
 <div class="d-flex justify-content-end">
     <button (click)="openDialog()" mat-button color="primary">
         Agregar Profesor
@@ -21,10 +23,10 @@
         <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
 
-    <!-- Subjects Column -->
-    <ng-container matColumnDef="subjects">
+    <!-- SubjectsCanTeach Column -->
+    <ng-container matColumnDef="subjectsCanTeach">
         <th mat-header-cell *matHeaderCellDef> Materias que puede dictar </th>
-        <td mat-cell *matCellDef="let element"> {{element.subjects}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.subjectsCanTeach}} </td>
     </ng-container>
 
     <!-- Actions Column -->

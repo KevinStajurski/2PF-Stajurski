@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from '../../core/services/login.service';
 import { Store } from '@ngrx/store';
 import { authActions } from '../../store/auth/auth.actions';
 import { authUser } from '../../store/auth/auth.selector';
@@ -17,7 +16,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   loginForm: FormGroup
   authUserSuscription?: Subscription
 
-  constructor(private fb: FormBuilder, private loginService: LoginService, private store: Store, private router: Router) {
+  constructor(private fb: FormBuilder, private store: Store, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -37,7 +36,6 @@ export class AuthComponent implements OnInit, OnDestroy {
       this.loginForm.markAllAsTouched()
     } else {
       this.store.dispatch(authActions.login({ payload: this.loginForm.getRawValue() }))
-      //this.loginService.login(this.loginForm.getRawValue())
     }
   }
 

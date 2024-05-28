@@ -3,10 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddStudentDialogComponent } from './add-student-dialog/add-student-dialog.component'
 import { StudentsService } from '../../../core/services/students.service';
 import { Observable, Subscription } from 'rxjs';
-import { IUser } from '../../../core/models';
+import { IStudent, UserRole } from '../../../core/models';
 import { Store } from '@ngrx/store';
 import { selectError, selectLoadingStudents, selectStudentsList } from './store/student.selectors';
 import { StudentActions } from './store/student.actions';
+import { authUser, authUserRole } from '../../../store/auth/auth.selector';
 
 @Component({
   selector: 'app-students',
@@ -25,10 +26,11 @@ export class StudentsComponent implements OnInit, OnDestroy {
     this.error$ = this.store.select(selectError)
   }
 
-  displayedColumns: string[] = ['firstname', 'id', 'email', 'coursed', 'studying', 'actions'];
-  dataSource: IUser[] = [];
+  displayedColumns: string[] = ['firstname', 'id', 'email', 'finalized', 'inProgress', 'actions'];
+  dataSource: IStudent[] = [];
   loadingStudents$: Observable<boolean>
   error$: Observable<unknown>
+
   // getSuscription?: Subscription
   deleteSuscription?: Subscription
   putSuscription?: Subscription
@@ -44,7 +46,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
     // })
   }
 
-  openDialog(editingStudent?: IUser): void {
+  openDialog(editingStudent?: IStudent): void {
     this.matDialog.open(AddStudentDialogComponent, { data: editingStudent })
       .afterClosed().subscribe({
         next: (result) => {

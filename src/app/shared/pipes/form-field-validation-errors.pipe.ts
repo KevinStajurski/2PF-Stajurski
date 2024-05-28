@@ -15,7 +15,6 @@ export class FormFieldValidationErrorsPipe implements PipeTransform {
           if (key === 'required') messages.push('Este campo es requerido.')
           if (key === 'pattern') messages.push('No cumple con el formato requerido.')
           if (key === 'minlength') messages.push(`Debe tener al menos ${errorDetail.requiredLength} caracteres`)
-          console.log(errorDetail)
         }
       }
       return messages.join('. ')

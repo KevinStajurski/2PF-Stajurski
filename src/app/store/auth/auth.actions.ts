@@ -1,10 +1,10 @@
 import { createActionGroup, emptyProps, props } from "@ngrx/store";
-import { LoginData } from "../../core/models";
+import { ILogin } from "../../core/models";
 
 export const authActions = createActionGroup({
     source: 'Auth',
     events: {
-        login: props<{ payload: LoginData }>(),
+        login: props<{ payload: ILogin }>(),
         logout: emptyProps()
     }
 })

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../core/services/login.service';
+import { Store } from '@ngrx/store';
+import { authState, authUser, authUserEmail } from '../../store/auth/auth.selector';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,16 @@ import { LoginService } from '../../core/services/login.service';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  constructor(private loginService: LoginService) { }
+
+  userName$: Observable<any> = this.store.select(authUserEmail)
+
+  constructor(private loginService: LoginService, private store: Store) { }
+
+
   //showFiller = false;
+
   handleLogout() {
     this.loginService.logout()
   }
+
 }

@@ -15,7 +15,7 @@ export class TeachersComponent {
 
   obsSuscription?: Subscription
 
-  displayedColumns: string[] = ['name', 'email', 'subjects'];
+  displayedColumns: string[] = ['name', 'email', 'subjectsCanTeach'];
 
   openDialog(){}
 

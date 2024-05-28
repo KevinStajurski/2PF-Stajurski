@@ -4,14 +4,14 @@
       "firstname": "Kevin",
       "lastname": "Stajurski",
       "email": "kevinstajurski@email.com",
-      "coursed": [
+      "finalized": [
         "HTML-CSS",
         "Javascript",
         "React",
         "React Native",
         "NextJS"
       ],
-      "studying": [
+      "inProgress": [
         "Angular"
       ],
       "id": "894e"
@@ -20,10 +20,10 @@
       "firstname": "Pablo",
       "lastname": "Gonzalez",
       "email": "pablogonzalez@email.com",
-      "coursed": [
+      "finalized": [
         "HTML-CSS"
       ],
-      "studying": [
+      "inProgress": [
         "Javascript"
       ],
       "id": "ee83"
@@ -32,13 +32,13 @@
       "firstname": "Pablo",
       "lastname": "Hernandez",
       "email": "pablohernandez@email.com",
-      "coursed": [
+      "finalized": [
         "HTML-CSS",
         "Javascript",
         "React",
         "React Native"
       ],
-      "studying": [
+      "inProgress": [
         "NextJS"
       ],
       "id": "ce08"
@@ -48,7 +48,7 @@
       "firstname": "Raul",
       "lastname": "Garcia",
       "email": "raulgarcia@email.com",
-      "coursed": [
+      "finalized": [
         "HTML-CSS",
         "Javascript",
         "React",
@@ -56,7 +56,7 @@
         "NextJS",
         "Angular"
       ],
-      "studying": ""
+      "inProgress": ""
     }
   ],
   "teachers": [
@@ -64,28 +64,28 @@
       "firstname": "Josue",
       "lastname": "Baez",
       "email": "josuebaez@email.com",
-      "subjects": "Angular",
+      "subjectsCanTeach": "Angular",
       "id": "25eb"
     },
     {
       "firstname": "Fede",
       "lastname": "Castro",
       "email": "fedecastro@email.com",
-      "subjects": "HTML-CSS",
+      "subjectsCanTeach": "HTML-CSS",
       "id": "0e1b"
     },
     {
       "firstname": "Jorge",
       "lastname": "Zambrano",
       "email": "jorgezambrano@email.com",
-      "subjects": "React",
+      "subjectsCanTeach": "React",
       "id": "7359"
     },
     {
       "firstname": "Francisco",
       "lastname": "Pugh",
       "email": "franciscopugh@email.com",
-      "subjects": "Javascript",
+      "subjectsCanTeach": "Javascript",
       "id": "9226"
     }
   ],

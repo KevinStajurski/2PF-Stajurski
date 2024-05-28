@@ -1,6 +1,28 @@
-export interface LoginData {
+export type UserRole = 'admin' | 'user'
+
+export type Courses = 'HTML-CSS' | 'Javascript' | 'React' | 'React Native' | 'NextJS' | 'Angular'
+
+export interface ILogin {
     email: string | null;
     password: string | null
+}
+
+export interface ITeacher {
+    firstname: string,
+    lastname: string,
+    email: string,
+    subjectsCanTeach: Courses[],
+    role: UserRole
+}
+
+export interface IStudent {
+    firstname: string;
+    lastname: string;
+    id: number;
+    email: string;
+    finalized: Courses[]
+    inProgress: Courses[]
+    role: UserRole
 }
 
 export interface ICourse {
@@ -9,33 +31,7 @@ export interface ICourse {
     duration: number;
     //startDate:Date;
     //endDate:Date;
-    teacher: string;
+    teacher: ITeacher;
     maxStudents: number;
-    students: IUser[]
-}
-
-export interface ITeacher {
-    firstname: string,
-    lastname: string,
-    email: string,
-    subjects: Courses[]
-}
-
-export interface ILogin {
-    email: string | null;
-    password: string | null
-}
-
-export type UserRole = 'admin' | 'user'
-
-export type Courses = 'HTML-CSS' | 'Javascript' | 'React' | 'React Native' | 'NextJS' | 'Angular'
-
-export interface IUser {
-    firstname: string;
-    lastname: string;
-    id: number;
-    email: string;
-    coursed: Courses[]
-    studying: Courses[]
-    role: UserRole
+    students: IStudent[]
 }

@@ -1,11 +1,11 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { IUser } from '../../../../core/models';
+import { IStudent } from '../../../../core/models';
 
 export const StudentActions = createActionGroup({
   source: 'Student',
   events: {
     'Load Students': emptyProps(),
-    'Load Students Success': props<{ data: IUser[] }>(),
+    'Load Students Success': props<{ data: IStudent[] }>(),
     'Load Students Failure': props<{ error: unknown }>(),
   }
 });

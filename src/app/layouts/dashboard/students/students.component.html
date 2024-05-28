@@ -6,6 +6,8 @@
 <pre>{{error$ | async | json}}</pre>
 }@else {
 
+<h2 class="mx-3">Alumnos</h2>
+
 <div class="d-flex justify-content-end">
     <button (click)="openDialog()" mat-button color="primary">
         Agregar alumno
@@ -35,16 +37,16 @@
         <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
 
-    <!-- Coursed Column -->
-    <ng-container matColumnDef="coursed">
+    <!-- Finalized Column -->
+    <ng-container matColumnDef="finalized">
         <th mat-header-cell *matHeaderCellDef> Cursos realizados </th>
-        <td mat-cell *matCellDef="let element"> {{element.coursed}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.finalized}} </td>
     </ng-container>
 
-    <!-- Studying Column -->
-    <ng-container matColumnDef="studying">
+    <!-- InProgress Column -->
+    <ng-container matColumnDef="inProgress">
         <th mat-header-cell *matHeaderCellDef> Cursando </th>
-        <td mat-cell *matCellDef="let element"> {{element.studying}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.inProgress}} </td>
     </ng-container>
 
     <!-- Actions Column -->
