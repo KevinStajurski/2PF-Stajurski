@@ -16,7 +16,9 @@ export class CoursesComponent implements OnInit, OnDestroy {
 
   obsSuscription?: Subscription
 
-  displayedColumns: string[] = ['name', 'commission', 'duration', 'teacher', 'maxStudents', 'students'];
+  displayedColumns: string[] = ['name', 'commission', 'duration', 'teacher', 'maxStudents', 'students', 'actions'];
+
+  onDeleteCourse(){}
 
   openDialog(){}
 

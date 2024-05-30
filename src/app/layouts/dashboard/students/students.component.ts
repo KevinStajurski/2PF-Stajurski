@@ -82,6 +82,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
     this.deleteSuscription?.unsubscribe()
     this.postSuscription?.unsubscribe()
     this.putSuscription?.unsubscribe()
+    this.authUserRoleSuscription.unsubscribe()
   }
 
 }
