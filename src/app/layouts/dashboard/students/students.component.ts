@@ -7,7 +7,7 @@ import { IStudent, UserRole } from '../../../core/models';
 import { Store } from '@ngrx/store';
 import { selectError, selectLoadingStudents, selectStudentsList } from './store/student.selectors';
 import { StudentActions } from './store/student.actions';
-import { authUser, authUserRole } from '../../../store/auth/auth.selector';
+import { authUserRole } from '../../../store/auth/auth.selector';
 
 @Component({
   selector: 'app-students',
