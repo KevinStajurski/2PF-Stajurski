@@ -8,7 +8,7 @@
 
 <h2 class="mx-3">Alumnos</h2>
 
-<div class="d-flex justify-content-end">
+<div *ngIf="authUserRole=='admin'" class="d-flex justify-content-end">
     <button (click)="openDialog()" mat-button color="primary">
         Agregar alumno
     </button>
@@ -53,10 +53,10 @@
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
-            <button (click)="onDeleteStudent(element.id)" mat-icon-button>
+            <button *ngIf="authUserRole=='admin'" (click)="onDeleteStudent(element.id)" mat-icon-button>
                 <mat-icon>delete</mat-icon>
             </button>
-            <button (click)="openDialog(element)" mat-icon-button>
+            <button *ngIf="authUserRole=='admin'" (click)="openDialog(element)" mat-icon-button>
                 <mat-icon>edit</mat-icon>
             </button>
         </td>

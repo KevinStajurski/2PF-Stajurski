@@ -24,12 +24,18 @@ export class StudentsComponent implements OnInit, OnDestroy {
   ) {
     this.loadingStudents$ = this.store.select(selectLoadingStudents)
     this.error$ = this.store.select(selectError)
+
   }
 
   displayedColumns: string[] = ['firstname', 'id', 'email', 'finalized', 'inProgress', 'actions'];
   dataSource: IStudent[] = [];
   loadingStudents$: Observable<boolean>
   error$: Observable<unknown>
+  authUserRole?: string = ""
+  authUserRoleSuscription: Subscription = this.store.select(authUserRole).subscribe({
+    next: (value) => this.authUserRole = value
+  })
+
 
   // getSuscription?: Subscription
   deleteSuscription?: Subscription
