@@ -51,10 +51,10 @@
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
-            <button (click)="onDeleteCourse()" mat-icon-button>
+            <button *ngIf="authUserRole=='admin'" (click)="onDeleteCourse()" mat-icon-button>
                 <mat-icon>delete</mat-icon>
             </button>
-            <button (click)="openDialog()" mat-icon-button>
+            <button *ngIf="authUserRole=='admin'" (click)="openDialog()" mat-icon-button>
                 <mat-icon>edit</mat-icon>
             </button>
         </td>
